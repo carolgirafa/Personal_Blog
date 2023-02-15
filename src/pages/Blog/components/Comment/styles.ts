@@ -1,87 +1,85 @@
-.comment {
+import styled from 'styled-components'
+
+export const CommentContainer = styled.div`
   margin-top: 1.5rem;
   display: flex;
   gap: 1rem;
-}
 
-.comment > img {
-  width: 3rem;
-  height: 3rem;
+  div {
+    flex: 1;
+  }
+
+  div footer {
+    margin-top: 0.5rem;
+  }
+
+  div footer button {
+    background: transparent;
+    border: 0;
+    color: ${(props) => props.theme['gray-300']};
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+
+    border-radius: 2px;
+  }
+
+  footer button:hover {
+    color: ${(props) => props.theme['pink-2']};
+  }
+
+  footer button svg {
+    margin-right: 0.5rem;
+  }
+
+  footer button span::before {
+    content: '\2022';
+    padding: 0 0.25rem;
+  }
+`
+
+export const CommentContentContainer = styled.div`
   border-radius: 8px;
-}
-
-.commentBox {
-  flex: 1;
-}
-
-.commentContent {
-  background: var(--gray-700);
-  border-radius: 8px;
+  border: 2px solid ${(props) => props.theme['gray-900']};
   padding: 1rem;
-}
 
-.commentContent header {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-}
+  header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
 
-.authorAndTime strong {
-  display: block;
-  font-size: 0.875rem;
-  line-height: 1.6;
-}
+  header button {
+    background: transparent;
+    border: 0;
+    color: ${(props) => props.theme['gray-400']};
+    cursor: pointer;
+    line-height: 0;
+    border-radius: 2px;
+  }
 
-.authorAndTime time {
-  display: block;
-  font-size: 0.75rem;
-  line-height: 1.6;
-  color: var(--gray-400);
-}
+  header button:hover {
+    color: ${(props) => props.theme['gray-700']};
+  }
 
-.commentContent header button {
-  background: transparent;
-  border: 0;
-  color: var(--gray-400);
-  cursor: pointer;
-  line-height: 0;
-  border-radius: 2px;
-}
+  p {
+    margin-top: 1rem;
+    color: ${(props) => props.theme['gray-300']};
+  }
+`
 
-.commentContent header button:hover {
-  color: var(--red-500);
-}
+export const AuthorAndTimeContainer = styled.div`
+  strong {
+    display: block;
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
 
-.commentContent p {
-  margin-top: 1rem;
-  color: var(--gray-300);
-}
-
-.commentBox footer {
-  margin-top: 1rem;
-}
-
-.commentBox footer button {
-  background: transparent;
-  border: 0;
-  color: var(--gray-400);
-  cursor: pointer;
-
-  display: flex;
-  align-items: center;
-
-  border-radius: 2px;
-}
-
-.commentBox footer button:hover {
-  color: var(--green-300);
-}
-
-.commentBox footer button svg {
-  margin-right: 0.5rem;
-}
-
-.commentBox footer button span::before {
-  content: "\2022";
-  padding: 0 0.25rem;
-}
+  time {
+    display: block;
+    font-size: 0.75rem;
+    line-height: 1.6;
+    color: ${(props) => props.theme['gray-400']};
+  }
+`
