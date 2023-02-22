@@ -1,30 +1,35 @@
-import { Circle } from 'phosphor-react'
-import { TagContainer, TimelineItemContainer } from './styles'
+import { TimelineItemTopContainer, TimelineItemContainer } from './styles'
 
-export interface TimelineItemProps {
+export interface TimelineContentProps {
+  key: number
   title: string
   text: string
-  time_init: string
-  time_end: string
-  category: 'Data Analysis' | 'Web Development' | 'Product Development'
+  category:
+    | 'Data Analysis'
+    | 'Web Development'
+    | 'Product Development'
+    | 'Engineering'
+}
+export interface TimelineItemProps {
+  key: number
+  company: string
+  timeInit: string
 }
 
-const colorCategory = {
-  'Data Analysis': 'dataAnalysis',
-  'Web Development': 'webDevelopment',
-  'Product Development': 'productDevelopment',
-}
+// const colorCategory = {
+//   'Data Analysis': 'dataAnalysis',
+//   'Web Development': 'webDevelopment',
+//   'Product Development': 'productDevelopment',
+//   'Engineering': 'engineering',
+// }
 
-export function TimelineItem({ title, text, time_init, time_end, category }: TimelineItemProps) {
+export function TimelineItem({ company, timeInit }: TimelineItemProps) {
   return (
     <TimelineItemContainer>
-      <TagContainer>{category}</TagContainer>
-      <h3>{title}</h3>
-      <time>
-        From <span>{time_init}</span> to <span>{time_end}</span>
-      </time>
-      <p>{text}</p>
-      <Circle size={5} />
+      <TimelineItemTopContainer>
+        <button>{company}</button>
+      </TimelineItemTopContainer>
+      <span>{timeInit}</span>
     </TimelineItemContainer>
   )
 }
