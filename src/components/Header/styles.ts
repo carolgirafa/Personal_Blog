@@ -6,7 +6,7 @@ export const HeaderContainer = styled.header`
   align-items: center;
   padding: 0.5rem 0;
   background-color: ${(props) => props.theme['gray-800']};
-  border-bottom: 1px solid ${(props) => props.theme['pink-2']};
+  /* border-bottom: 1px solid ${(props) => props.theme['pink-2']}; */
 
   img {
     height: 4rem;
